@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Millenium Computers</title>
+    <link rel="stylesheet" href="css/mill.css" />
+    <link rel="stylesheet" href="css/oform.css" />
+    <script src="js/formsubmit.js"></script>
+    <script src="js/modernizr-1.5.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="images/mc_logo.png" alt="Millenium Computers" id="logoimg">
+        <nav>
+            <ul>
+               <li><a href="#">Home</a></li>
+               <li><a href="#">Desktops</a></li>
+               <li><a href="#">Laptops</a></li>
+               <li><a href="#">Peripherals</a></li>
+               <li><a href="#">Support</a></li>
+               <li><a href="#">Your Account</a></li>
+               <li><a href="#">Shopping Cart</a></li>
+               <li><a href="#">Contact Us</a></li>
+            </ul>
+         </nav>
+    </header>
+
+    <section>
+        <h1>Build Your Computer</h1>
+        <p>* - required information</p>
+    </section>
+
+    <form id="cOrder" action="http://www.mill_computers.com/order/process.cgi" method="POST">
+    <fieldset id="cInfo">
+        <legend>Contact Information</legend>
+        <div class="formRow">
+            <label for="fName">First Name *</label>
+            <input type="text" name="firstName" id="fName"  required/>
+        </div>
+
+        <div class="formRow">
+            <label for="lName">Last Name *</label>
+            <input type="text" name="lastName" id="lName" required />
+        </div>
+
+        <div class="formRow">
+            <label for="street">Street *</label>
+            <input type="text" name="street" id="street" required />
+        </div>
+
+        <div class="formRow">
+            <label for="city">City *</label>
+            <input type="text" name="city" id="city" required/>
+        </div>
+
+        <div class="formRow">
+            <label for="prov">Province *</label>
+            <input type="text" name="province" id="province" required/>
+        </div>
+
+        <div class="formRow">
+            <label for="poscode">Postal Code *</label>
+            <input type="text" name="poscode" id="poscode" pattern="^(\d{5}(-\d{4})?|[A-Z]\d[A-Z] ?\d[A-Z]\d)$" placeholder="nnn nnn" maxlength="7" required/>
+        </div>
+
+        <div class="formRow">
+            <label for="Phone">Phone *</label>
+            <input type="tel" name="phone" id="phone" pattern="^d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$" placeholder="(###) ###-####" required/>
+        </div>
+
+        <input type="checkbox" name="warranty" id="warranty" />
+        <label for="warranty">Yes, I want the 24-month extended Warranty</label>
+
+    </fieldset>
+
+    <fieldset id="cConf">
+        <legend>Computer Configuration</legend>
+        <div class="formRow">
+            <label for="pSpeed">Processor Speed</label>
+            <select name="pSpeedSel" id="pSpeedSel">
+                <option value="3.2 GHz">3.2 GHz</option>
+                <option value="4 GHz">4 GHz</option>
+                <option value="5.2 GHz">5.2 GHz</option>
+            </select>
+        </div>
+
+        <div class="formRow">
+            <label for="mem">Memory</label>
+            <select name="mem" id="memSel">
+                <option value="1 GB">1 GB</option>
+                <option value="2 GB">2 GB</option>
+                <option value="4 GB">4 GB</option>
+                <option value="8 GB">8 GB</option>
+            </select>
+        </div>
+
+        <div class="formRow">
+            <label for="monitor">Monitor Size</label>
+            <select name="monitor" id="monSize">
+                <option value="15 inches">15"</option>
+                <option value="17 inches">17"</option>
+                <option value="19 inches">19"</option>
+                <option value="21 inches">21"</option>
+            </select>
+        </div>
+
+        <div class="formRow">
+            <label for="drive">Hard Drive</label>
+            <select name="hd" id="hDrive">
+                <option value="240 GB">240 GB</option>
+                <option value="500 GB">500 GB</option>
+                <option value="750 GB">750 GB</option>
+                <option value="1 TB">1 TB</option>
+            </select>
+        </div>
+
+        <div class="formRow">
+            <label>DVD Burner</label>
+            <fieldset class="optGroup">
+                <label for="dYes">Yes</label>
+                <input type="radio" name="dvd" id="dYes" value="yes" />
+
+                <label for="dNo">No</label>
+                <input type="radio" name="dvd" id="dNo" value="no">
+            </fieldset>
+        </div>
+
+        <div class="formRow">
+            <label>Tuner Card</label>
+            <fieldset class="optGroup">
+                <label for="tYes">Yes</label>
+                <input type="radio" name="tuner" id="tYes" value="yes" />
+
+                <label for="tNo">No</label>
+                <input type="radio" name="tuner" id="tNo" value="no">
+            </fieldset>
+        </div>
+
+        <div class="formRow">
+            <label>Media Card Reader</label>
+            <fieldset class="optGroup">
+                <label for="mYes">Yes</label>
+                <input type="radio" name="mCard" id="mYes" value="yes" />
+
+                <label for="mNo">No</label>
+                <input type="radio" name="mCard" id="mNo" value="no">
+            </fieldset>
+        </div>
+    </fieldset>
+
+    <label for="commBox" id="sReq">Any special requests on your order?</label>
+    <textarea name="custExp" id="commBox"></textarea>
+
+    <div id="buttons">
+        <input type="submit" value="Send Order" />
+        <input type="reset" value="Cancel Order" />
+        <input type="button" value="Contact Me" />
+    </div>
+    </form>
+
+    <footer>
+        <address>
+            10000 Vancity Drive 
+            Vancouver, BC 
+            V5M 2S2
+            (604) 456-7890
+        </address>
+    </footer>
+</body>
+</html>
